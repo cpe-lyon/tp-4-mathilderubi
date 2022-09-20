@@ -29,4 +29,38 @@ Le paquet hollywood simule une fenêtre de hacking.
 8. Les paquets gnome-sudoku, nudoku et ksudoku permettent de jouer au sudoku.
 
 ## Exercice 2. 
-Grace à la commande `dpkg -S /bin/ls`, on sait que la commande ls a été installée à partir du paquet coreutils.
+Grâce à la commande `dpkg -S /bin/ls`, on sait que la commande ls a été installée à partir du paquet coreutils.
+On crée le fichier origine-commande et on insère les lignes suivantes :
+
+```
+#!/bin/bash
+
+commande=$1
+which -a $commande | xargs dpkg -S 2> /dev/null | cut -d":" -f1
+
+```
+
+Ensuite on exécute le script :
+`
+tp@serveur:/bin$ sudo chmod 755 origine-commande 
+tp@serveur:/bin$ sudo origine-commande ls
+coreutils
+tp@serveur:/bin$ 
+`
+
+## Exercice 3
+On crée un fichier script et on entre les lignes suivantes :
+```
+#!/bin/bash
+
+function verif()
+{
+        verif=$(apt list -a $1)
+        if [[ $verif == *"installé"* ]]; then
+                echo "INSTALLE"
+        else
+                echo "NON INSTALLE"
+        fi
+}
+verif $1
+```
