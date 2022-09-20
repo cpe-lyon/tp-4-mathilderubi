@@ -64,3 +64,21 @@ function verif()
 }
 verif $1
 ```
+Puis on vérifie si ça fonctionne
+`
+tp@serveur:/bin$ isinstalle sudo
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+NON INSTALLE
+
+`
+Pour une ligne de commande seule on exécute la commande dpkg -l coreutils 2>/dev/null | grep "^ii" > /dev/null && echo "INSTALLE" || echo "NON INSTALLE" 
+
+
+## Exercice 4
+
+Pour lister les programmes qui ont été installés avec coreutils, on exécute la commande `dpkg -L coreutils`. Le programme nommé "[" est un le programme qui permet de faire des tests.
+
+## Exercice 5
+
