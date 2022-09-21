@@ -82,3 +82,17 @@ Pour lister les programmes qui ont été installés avec coreutils, on exécute 
 
 ## Exercice 5
 
+Le paquet emacs est un éditeur de texte qui peut servir d'environnement de développement pour beaucoup de langages.
+Le paquet Lynx est un navigateurs web en mode texte utilisable via une console ou un terminal. La navigation se fait entièrement au clavier, et il est très utilisé notamment par les utilisateurs atteints de déficience visuelle, du fait de la facilité de mise en place d'un synthétiseur vocal.
+Pour installer aptitude :
+`sudo apt-get update
+sudo apt-get install aptitude`
+Ensuite on ouvre aptitude avec `aptitude`, on cherche emacs et lynx avec / et on installe.
+
+## Exercice 6
+`sudo add-apt-repository ppa:linuxuprising/java
+sudo apt update
+sudo apt install oracle-java15-installer`
+Un nouveau fichier a bien été créé dans /etc/apt/sources.list.d.
+
+## Exercice 7
